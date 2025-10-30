@@ -1,23 +1,21 @@
-'use server';
-/**
- * @fileoverview This file is the entrypoint for all Genkit and AI related code.
- *
- * It is used to initialize the AI plugin, and to define the AI model.
- */
-
-import {genkit, ai} from '@genkit-ai/next';
+import {genkit} from 'genkit';
 import {googleAI} from '@genkit-ai/google-genai';
+import {next} from '@genkit-ai/next';
 
-// Construct the Google AI plugin configuration
-const googleAIPlugin = googleAI({
+// This is the correct way to pass the API key in production environments like Vercel.
+// It reads the environment variable and explicitly passes it to the plugin.
+const googleAiPlugin = googleAI({
   apiKey: process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY,
 });
 
-// Initialize Genkit with the configured Google AI plugin
-genkit({
-  plugins: [googleAIPlugin],
+export default genkit({
+  plugins: [
+    next(),
+    googleAiPlugin, // Use the configured plugin
+  ],
+  logLevel: 'debug',
+  enableTracingAndMetrics: true,
 });
 
-export {ai};
 
 
