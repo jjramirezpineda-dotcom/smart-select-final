@@ -1,0 +1,76 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero-background",
+      "description": "Abstract technology background for the hero section",
+      "imageUrl": "https://images.unsplash.com/photo-1579548122080-c35fd6820ecb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhYnN0cmFjdCUyMHRlY2hub2xvZ3l8ZW58MHx8fHwxNzYxNTg1MzQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract technology"
+    },
+    {
+      "id": "project-1",
+      "description": "A modern office setting for a corporate IT solutions project",
+      "imageUrl": "https://images.unsplash.com/photo-1556761175-4b46a572b786?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxtb2Rlcm4lMjBvZmZpY2V8ZW58MHx8fHwxNzYxNTY3ODYyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "modern office"
+    },
+    {
+      "id": "project-2",
+      "description": "A person using a custom software on a tablet",
+      "imageUrl": "https://images.unsplash.com/photo-1747500871520-5ce04b6201cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzb2Z0d2FyZSUyMHRhYmxldHxlbnwwfHx8fDE3NjE2NTg3Njd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "software tablet"
+    },
+    {
+      "id": "project-3",
+      "description": "Cloud infrastructure visualization",
+      "imageUrl": "https://images.unsplash.com/photo-1629058546230-b82b8ebc2fc5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjbG91ZCUyMGluZnJhc3RydWN0dXJlfGVufDB8fHx8MTc2MTU1NDM0Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cloud infrastructure"
+    },
+    {
+      "id": "project-4",
+      "description": "E-commerce website on a laptop screen",
+      "imageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxlY29tbWVyY2UlMjB3ZWJzaXRlfGVufDB8fHx8MTc2MTY1MDQzOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ecommerce website"
+    },
+    {
+      "id": "project-5",
+      "description": "Cybersecurity operations center",
+      "imageUrl": "https://images.unsplash.com/photo-1669052700037-db884b37b2d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjeWJlcnNlY3VyaXR5JTIwb3BlcmF0aW9uc3xlbnwwfHx8fDE3NjE2NTg3Njd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cybersecurity operations"
+    },
+    {
+      "id": "project-6",
+      "description": "Data analytics dashboard on multiple screens",
+      "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxkYXRhJTIwYW5hbHl0aWNzfGVufDB8fHx8MTc2MTYzNTI1M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "data analytics"
+    },
+    {
+      "id": "about-us-image",
+      "description": "A collaborative team working in a modern office.",
+      "imageUrl": "https://images.unsplash.com/photo-1590650046871-92c887180603?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxkaXZlcnNlJTIwdGVhbXxlbnwwfHx8fDE3NjE2MDc4MTF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "diverse team"
+    },
+    {
+      "id": "team-member-1",
+      "description": "Headshot of a young male entrepreneur.",
+      "imageUrl": "https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx5b3VuZyUyMG1hbGUlMjBoZWFkc2hvdHxlbnwwfHx8fDE3NjE3NjA3MzV8MA&ixlib=rb-4.1.0&q=80&w=400&h=400",
+      "imageHint": "young entrepreneur"
+    },
+    {
+      "id": "team-member-2",
+      "description": "Headshot of a young male developer.",
+      "imageUrl": "https://images.unsplash.com/photo-1557862921-37829c790f19?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx5b3VuZyUyMG1hbGUlMjBoZWFkc2hvdHxlbnwwfHx8fDE3NjE3NjA3MzV8MA&ixlib=rb-4.1.0&q=80&w=400&h=400",
+      "imageHint": "young developer"
+    },
+    {
+      "id": "team-member-3",
+      "description": "Headshot of a young female designer.",
+      "imageUrl": "https://images.unsplash.com/photo-1595211877493-41a4e5f236b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx5b3VuZyUyMGZlbWFsZSUyMGhlYWRzaG90fGVufDB8fHx8MTc2MTc2MDczNXww&ixlib=rb-4.1.0&q=80&w=400&h=400",
+      "imageHint": "young designer"
+    },
+    {
+      "id": "team-member-4",
+      "description": "Professional headshot of a team member.",
+      "imageUrl": "https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdHxlbnwwfHx8fDE3NjE1NjY1ODh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "professional headshot"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+/**
+ * @fileoverview Firestore Security Rules for TechAssist AI application.
+ *
+ * Core Philosophy:
+ * This ruleset enforces a strict user-ownership model for user accounts,
+ * ensuring that each user can only access their own data. Contact messages
+ * are restricted to administrative access. The rules prioritize security by
+ * validating user identity and access based on request authentication.
+ *
+ * Data Structure:
+ * - User accounts are stored under `/users/{userId}`, where `{userId}` matches
+ *   the authenticated user's UID.
+ * - Contact messages are stored under `/contact_messages/{messageId}`.
+ *
+ * Key Security Decisions:
+ * - Users can only create, read, update, and delete their own user account data.
+ * - Listing of user accounts is disallowed to prevent information disclosure.
+ * - Access to contact messages is denied for all users.
+ *
+ * Denormalization for Authorization:
+ * - The `UserAccount` entity contains an `id` field that must match the `userId`
+ *   in the path `/users/{userId}`. This redundancy allows us to enforce
+ *   ownership without additional reads.
+ */
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    /**
+     * @description Enforces user-ownership for user accounts.
+     * @path /users/{userId}
+     * @allow (create) User with ID 'user123' can create their account.
+     *   - request.auth.uid: 'user123'
+     *   - request.resource.data.id: 'user123'
+     * @allow (get, update, delete) User with ID 'user123' can read/write their account.
+     *   - request.auth.uid: 'user123'
+     *   - resource.data.id: 'user123'
+     * @deny (create) User with ID 'user123' cannot create an account with ID 'user456'.
+     *   - request.auth.uid: 'user123'
+     *   - request.resource.data.id: 'user456'
+     * @deny (get, update, delete) User with ID 'user123' cannot read/write user 'user456' account.
+     *   - request.auth.uid: 'user123'
+     *   - resource.data.id: 'user456'
+     * @principle Enforces document ownership for writes and restricts access to a user's own data tree.
+     */
+    match /users/{userId} {
+      allow get: if isOwner(userId);
+      allow list: if false;
+      allow create: if isSignedIn() && request.auth.uid == userId && request.resource.data.id == userId;
+      allow update: if isExistingOwner(userId) && request.resource.data.id == resource.data.id;
+      allow delete: if isExistingOwner(userId);
+    }
+
+    /**
+     * @description Restricts access to contact messages.
+     * @path /contact_messages/{messageId}
+     * @allow (none) No one can access contact messages.
+     * @deny (create, get, list, update, delete) All operations are denied.
+     * @principle Restricts access to contact messages.
+     */
+    match /contact_messages/{messageId} {
+      allow get: if false;
+      allow list: if false;
+      allow create: if false;
+      allow update: if false;
+      allow delete: if false;
+    }
+
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isExistingOwner(userId) {
+      return isOwner(userId) && resource != null;
+    }
+  }
+}
